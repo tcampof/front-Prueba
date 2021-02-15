@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  background: #ecf0f3;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+.custom-form {
+  min-width: 300px;
+  max-width: 40%;
+  margin: 0px auto;
+  background: rgba(37, 25, 25, 0.15);
+  padding: 2rem 3rem;
+  margin: auto;
+  background-color: #d3dde6;
+  /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff; */
+  color: black;
+  margin-top: 10rem;
+}
+.custom-form input {
+  display: block;
+  margin: 2rem 0;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border: 0 none;
+}
+
+button{
+  width: 100%;
+  border-radius: 0px;
+}

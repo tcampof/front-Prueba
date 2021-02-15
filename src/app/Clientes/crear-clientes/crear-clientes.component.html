@@ -1,0 +1,74 @@
+<form>
+  <div class="container">
+    <br />
+    <br />
+    <input type="hidden" name="idCliente" />
+    <div class="form-group">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h3 class="display-5">Crear Clientes</h3>
+          <hr class="my-2" />
+          <div class="card text-black bg-ligth">
+            <div class="card-body">
+              <input type="hidden" class="form-control" name="id" [(ngModel)]="Id"/>
+              <label for="">Nombre</label>
+              <input type="text" class="form-control" name="Nombre" [(ngModel)]="Nombre"/>
+              <label for="">Apellido</label>
+              <input type="text" class="form-control" name="Apellido" [(ngModel)]="Apellido"/>
+              <label for="">Identificacion</label>
+              <input type="text" class="form-control" name="Identificacion" [(ngModel)]="Identificacion" />
+              <label for="">Dirección</label>
+              <input type="text" class="form-control" name="Direccion" [(ngModel)]="Direccion" />
+              <br />
+              <p class="lead">
+                  <ng-container *ngIf="_nombreBoton == 'Crear'; else elseTemplate">
+                    <button type="button"  (click)="crearCliente()" class="btn btn-outline-primary">
+                        {{_nombreBoton}}
+                      </button>
+                  </ng-container>
+                  <ng-template #elseTemplate>
+                    <button type="button"  (click)="editar()" class="btn btn-outline-primary">
+                        {{_nombreBoton}}
+                      </button>
+                  </ng-template>
+                  
+                
+              </p>
+            </div>
+          </div>
+          <br>
+          <div class="card border-primary">
+            <img class="card-img-top" src="holder.js/100px180/" alt="">
+            <div class="card-body">
+                <div class="col-md-6 user-container">
+                    <h2 style="margin: auto"> Lista de clientes</h2>
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>Identificacion</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Direccion</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let item of clientes; let i = index" (click)="seleccionarItem(item)">
+                        <td style="display: none;">{{item.id}}</td>
+                        <td>{{item.identificacion}}</td>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.apellido}}</td>
+                        <td>{{item.direccion}}</td>
+                        <td></td>
+                        <td><button class="btn btn-success" [(ngModel)]="_editar"> <i class="far fa-edit"></i></button>
+                          <button class="btn btn-danger"  style="margin-left: 10px;"><i class="fas fa-trash"></i></button></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
